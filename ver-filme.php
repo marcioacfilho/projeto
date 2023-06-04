@@ -6,12 +6,12 @@ $id = $_GET["id"];
 $titulo = $categoria = $foto = $video = "";
 include "conexao.php";
 $sql_buscar = "select * from jogo where id = $id";
-$todos_os_jogos = mysqli_query($conexao, $sql_buscar);
-while($um_jogo = mysqli_fetch_assoc($todos_os_jogos)):
-    $titulo = $um_jogo["titulo"];
-    $categoria = $um_jogo["categoria"];
-    $video = $um_jogo["video"];
-    $foto = $um_jogo["foto"];
+$todos_os_filmes = mysqli_query($conexao, $sql_buscar);
+while($um_filme = mysqli_fetch_assoc($todos_os_filmes)):
+    $titulo = $um_filme["titulo"];
+    $categoria = $um_filme["categoria"];
+    $video = $um_filme["video"];
+    $foto = $um_filme["foto"];
 endwhile;
 mysqli_close($conexao);
 ?>
@@ -19,7 +19,7 @@ mysqli_close($conexao);
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h6>Detalhe do jogo Cód.: <?php echo $id;?> </h6>
+            <h6>Detalhe do filme Cód.: <?php echo $id;?> </h6>
         </div>
         <div class="col-12">
             <h3>Título: <?php echo $titulo;?> </h3>

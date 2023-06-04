@@ -6,7 +6,7 @@ include "menu-sistema.php";
 <div class="container">
     <div class="row">
         <div class="col">
-            <a href="listar-jogos.php">Gerenciar Filmes</a>
+            <a href="listar-filmes.php">Gerenciar Filmes</a>
             <a href="listar-usuarios.php">Gerenciar Usuários</a>
         </div>
     </div>

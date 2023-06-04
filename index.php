@@ -58,29 +58,29 @@ include "menu.php";
     <?php
     include "conexao.php";
 
-    $sql_buscar = "select * from jogo";
+    $sql_buscar = "select * from filme";
 
-    $todos_os_jogos = mysqli_query($conexao, $sql_buscar);
+    $todos_os_filmes = mysqli_query($conexao, $sql_buscar);
 
-    while ($um_jogo = mysqli_fetch_assoc($todos_os_jogos)) :
+    while ($um_filme = mysqli_fetch_assoc($todos_os_filmes)) :
     ?>
 
       <!--<div class="col mt-3 card bg-dark text-white">-->
       <div class="col-md-3 text-center mb-4">
-        <img src="<?php echo $um_jogo["foto"]; ?>" class="img-fluid" style="object-fit: cover; height: 150px; width: 100%; object-position: top center;">
-        <h6 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_jogo["categoria"]; ?></h6>
+        <img src="<?php echo $um_filme["foto"]; ?>" class="img-fluid" style="object-fit: cover; height: 150px; width: 100%; object-position: top center;">
+        <h6 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_filme["categoria"]; ?></h6>
         <?php
         $cor = "";
-        if (strtoupper($um_jogo["categoria"]) == "JOGO DE FPS") {
+        if (strtoupper($um_filme["categoria"]) == "FILME DE ACAO") {
           $cor = "red";
-        } else if (strtoupper($um_jogo["categoria"]) == "JOGO DE LUTA") {
+        } else if (strtoupper($um_filme["categoria"]) == "JOGO DE LUTA") {
           $cor = "orange";
-        } else if (strtoupper($um_jogo["categoria"]) == "JOGO DE HISTORIA") {
+        } else if (strtoupper($um_filme["categoria"]) == "JOGO DE HISTORIA") {
           $cor = "green";
         }
         ?>
-        <h5 class="mt-3 mb-3"><?php echo $um_jogo["titulo"]; ?></h5>
-        <a href="<?php echo $um_jogo["video"]; ?>" class="btn btn-danger">VER MAIS</a>
+        <h5 class="mt-3 mb-3"><?php echo $um_filme["titulo"]; ?></h5>
+        <a href="<?php echo $um_filme["video"]; ?>" class="btn btn-danger">VER MAIS</a>
       </div>
     <?php
     endwhile;
