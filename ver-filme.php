@@ -5,7 +5,7 @@ include "menu-sistema.php";
 $id = $_GET["id"];
 $titulo = $categoria = $foto = $video = "";
 include "conexao.php";
-$sql_buscar = "select * from jogo where id = $id";
+$sql_buscar = "select * from filme where id = $id";
 $todos_os_filmes = mysqli_query($conexao, $sql_buscar);
 while($um_filme = mysqli_fetch_assoc($todos_os_filmes)):
     $titulo = $um_filme["titulo"];

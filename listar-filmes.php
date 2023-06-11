@@ -41,9 +41,9 @@ include "menu-sistema.php";
                 endwhile;
                 mysqli_close($conexao);
                 ?>
-                <div>
+                <form action="cadastrar-novo-filme" method="post" class="d-flex">
                 <button type="submit" class="btn btn-success w-25">CADASTRAR NOVO FILME</button>
-                </div>
+                </form>
             </table>
         </div>
     </div>
