@@ -37,23 +37,6 @@ include "menu.php";
     </div>
   </div>
   <div class="row">
-    <!-- <div class="col-3 text-center">
-      <img src="img/jogo04.jpg" class="img-fluid">
-      <h3>Nome do jogo</h3>
-      <a href="nomedojogo.php" class="btn btn-primary">VER MAIS</a>
-    </div>
-
-    <div class="col-3 text-center">
-      <img src="img/jogo12.jpg" class="img-fluid">
-      <h3>Nome do jogo</h3>
-      <a href="nomedojogo.php" class="btn btn-primary">VER MAIS</a>
-    </div>
-
-    <div class="col-3 text-center">
-      <img src="img/jogo15.jpg" class="img-fluid">
-      <h3>Nome do jogo</h3>
-      <a href="nomedojogo.php" class="btn btn-primary">VER MAIS</a>
-    </div>  -->
 
     <?php
     include "conexao.php";
@@ -67,7 +50,7 @@ include "menu.php";
 
       <!--<div class="col mt-3 card bg-dark text-white">-->
       <div class="col-md-3 text-center mb-4">
-        <img src="<?php echo $um_filme["foto"]; ?>" class="img-fluid" style="object-fit: cover; height: 150px; width: 100%; object-position: top center;">
+        <img src="<?php echo $um_filme["foto"]; ?>" data-video="<?php echo $um_filme["video"]; ?>" onclick="handleClick(this);" class="video-thumbnail" alt="<?php echo $um_filme["titulo"]; ?>">
         <h6 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_filme["categoria"]; ?></h6>
         <?php
         $cor = "";
@@ -80,28 +63,66 @@ include "menu.php";
         }
         ?>
         <h5 class="mt-3 mb-3"><?php echo $um_filme["titulo"]; ?></h5>
-        <a href="<?php echo $um_filme["video"]; ?>" class="btn btn-danger">VER MAIS</a>
       </div>
+
     <?php
     endwhile;
     mysqli_close($conexao);
     ?>
 
-  </div>
-  <div class="row mt-5">
-    <div class="col-12 text-center">
-      <h2>Quer assistir? Informe seu email para criar ou reiniciar sua assinatura.</h2>
+  <!-- Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <iframe id="videoFrame" width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
     </div>
-    <form>
-  <div class="form-group col-md-4">
-    <label for="exampleInputEmail1">E-mail</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-    <small id="emailHelp" class="form-text text-muted"></small>
   </div>
-  <br>
-  <button type="submit" class="btn btn-danger">Enviar > </button>
-</form>
-    
+
+<script>
+  	// Função para adicionar a classe "clicked" ao clicar na imagem
+	function handleClick(element) {
+	  element.classList.toggle('clicked');
+	}
+	
+    // Referências aos elementos do DOM
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+    const videoModal = document.getElementById('videoModal');
+    const videoFrame = document.getElementById('videoFrame');
+    const closeBtn = document.querySelector('.close');
+
+    // URL do vídeo do YouTube
+    const videoUrl = "https://www.youtube.com/embed/";
+
+    // Função para abrir o modal e carregar o vídeo
+    function openModal(videoId) {
+      videoFrame.src = videoUrl + videoId;
+      videoModal.style.display = 'block';
+    }
+
+    // Função para fechar o modal
+    function closeModal() {
+      videoFrame.src = '';
+      videoModal.style.display = 'none';
+    }
+
+    // Evento de clique nas imagens para abrir o modal
+    videoThumbnails.forEach(function(thumbnail) {
+      thumbnail.addEventListener('click', function() {
+        const videoId = this.getAttribute('data-video');
+        openModal(videoId);
+      });
+    });
+
+    // Evento de clique no botão para fechar o modal
+    closeBtn.addEventListener('click', closeModal);
+
+    // Evento de clique fora do modal para fechá-lo
+    window.addEventListener('click', function(event) {
+      if (event.target == videoModal) {
+        closeModal();
+      }
+    });
+  </script>
 
   </div>
 

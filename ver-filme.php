@@ -25,7 +25,7 @@ mysqli_close($conexao);
             <h3>Título: <?php echo $titulo;?> </h3>
             <p><img src="<?php echo $foto;?>" width="300"></p>
             <p>Categoria: <?php echo $categoria;?> </p>
-            <p><a href="<?php echo $video;?>">Ver o vídeo</a></p>
+            <p><a href="https://www.youtube.com/watch?v=<?php echo $video;?>">Ver o vídeo</a></p>
         </div>
     </div>
 </div>
