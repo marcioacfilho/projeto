@@ -33,7 +33,7 @@ include "menu.php";
       <h1>SÉRIES E FILMES ILIMITADOS</h1>
     </div>
     <div class="col-12 text-center">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem omnis dolorum voluptates ea consequatur magnam, labore voluptas repellat quidem voluptatem, mollitia eaque aut iure nesciunt, at architecto distinctio. Error, consequuntur?</p>
+      <p>oi ipsum dolor sit amet consectetur adipisicing elit. Autem omnis dolorum voluptates ea consequatur magnam, labore voluptas repellat quidem voluptatem, mollitia eaque aut iure nesciunt, at architecto distinctio. Error, consequuntur?</p>
     </div>
   </div>
   <div class="row">
