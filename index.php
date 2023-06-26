@@ -3,28 +3,32 @@ include "cabecalho.php";
 include "menu.php";
 ?>
 
-<div class="banner container-fluid bnner">
-  <div id="carouselExample" class="carousel slide carousel-fade">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/banner10.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="img/banner11.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="img/banner12.jpg" class="d-block w-100" alt="...">
-      </div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" style="width: 100%; height: 500px" >
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="img/img1.jpg" class="d-block w-100" alt="...">
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+    <div class="carousel-item">
+      <img src="img/img2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/img3.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/img4.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/img5.jpg" class="d-block w-100" alt="...">
+    </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
 
 <div class="container mt-5">
@@ -33,7 +37,7 @@ include "menu.php";
       <h1>SÉRIES E FILMES ILIMITADOS</h1>
     </div>
     <div class="col-12 text-center">
-      <p>oi ipsum dolor sit amet consectetur adipisicing elit. Autem omnis dolorum voluptates ea consequatur magnam, labore voluptas repellat quidem voluptatem, mollitia eaque aut iure nesciunt, at architecto distinctio. Error, consequuntur?</p>
+      <p>Bem-vindo ao nosso site de vídeos de filmes e séries! Aqui, você encontrará uma vasta coleção de conteúdo de entretenimento para desfrutar e mergulhar em histórias emocionantes.</p>
     </div>
   </div>
   <div class="row">
@@ -54,11 +58,11 @@ include "menu.php";
         <h6 class="mt-3 mb-3" style="color:<?php echo $cor; ?>"><?php echo $um_filme["categoria"]; ?></h6>
         <?php
         $cor = "";
-        if (strtoupper($um_filme["categoria"]) == "FILME DE ACAO") {
+        if (strtoupper($um_filme["categoria"]) == "") {
           $cor = "red";
-        } else if (strtoupper($um_filme["categoria"]) == "JOGO DE LUTA") {
+        } else if (strtoupper($um_filme["categoria"]) == "") {
           $cor = "orange";
-        } else if (strtoupper($um_filme["categoria"]) == "JOGO DE HISTORIA") {
+        } else if (strtoupper($um_filme["categoria"]) == "") {
           $cor = "green";
         }
         ?>
@@ -131,6 +135,24 @@ include "menu.php";
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<div class="rodape">
+
+<h6>Esperamos que você aproveite ao máximo nossa plataforma e descubra novos filmes e séries que o cativarão. <br>Seja bem-vindo ao nosso site de vídeos de filmes e séries, seu destino definitivo para o melhor do entretenimento audiovisual. Divirta-se!</h6>
+<br>
+<p>© 2023 - MRFlix - Todos os direitos reservados</p>
+<div class="redes-sociais">
+  <a href="#" rel="noopener noreferrer">
+    <img src="img/facebook_icon.png" alt="Facebook">
+  </a>
+  <a href="#" rel="noopener noreferrer">
+    <img src="img/instagram_icon.png" alt="Instagram">
+  </a>
+  <a href="#" rel="noopener noreferrer">
+    <img src="img/twitter_icon.png" alt="Twitter">
+  </a>
+</div>
+
+</div>
 </body>
 
 </html>

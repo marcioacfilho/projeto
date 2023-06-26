@@ -10,7 +10,7 @@
 </head> 
 <style>
     body {
-        background-color: grey;
+        background-color: #333333;
     }
     h1 {
         color:white
@@ -19,6 +19,12 @@
         color: white;
     }
     p {
+        color: white;
+    }
+    h6 {
+        color: white;
+    }
+    h5{
         color: white;
     }
     </style>

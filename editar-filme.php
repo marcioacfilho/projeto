@@ -21,13 +21,13 @@ mysqli_close($conexao);
         <div class="col-12">
             <h6>Editar Filme Cód.: <?php echo $id; ?> </h6>
         </div>
-        <div class="col-12">
+        <div class="col-5">
             <form action="salvar-filme-editado.php?id=<?php echo $id; ?>" method="post">
-                Título: <input name="titulo" value="<?php echo $titulo; ?>">
-                Foto: <input name="foto" value="<?php echo $foto; ?>">
-                Categoria: <input name="categoria" value="<?php echo $categoria; ?>">
-                Video: <input name="video" value="<?php echo $video ?>">
-                <button type="submit">Salvar</button>
+                <span style="color: white; padding: 20px;">Título:</span> <input style="margin: -10px 0 10px 0;" name="titulo" value="<?php echo $titulo; ?>"><br>
+                <span style="color: white; padding: 20px;">Foto:</span> <input style="margin: -10px 0 10px 0;" name="foto" value="<?php echo $foto; ?>"><br>
+                <span style="color: white; padding: 20px;">Categoria:</span> <input style="margin: -10px 0 10px 0;" name="categoria" value="<?php echo $categoria; ?>"><br>
+                <span style="color: white; padding: 20px;">Video:</span><input style="margin: -10px 0 10px 0;" name="video" value="<?php echo $video ?>"><br>
+                <button type="submit" class="btn btn-success mt-3">Salvar</button>
             </form>
         </div>
     </div>
