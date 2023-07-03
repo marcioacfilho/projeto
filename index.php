@@ -3,7 +3,7 @@ include "cabecalho.php";
 include "menu.php";
 ?>
 
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner" style="width: 100%; height: 500px" >
     <div class="carousel-item active" data-bs-interval="5000">
       <img src="img/img1.jpg" class="d-block w-100" alt="...">
